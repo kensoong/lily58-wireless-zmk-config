@@ -9,6 +9,28 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    behaviors {
+        bht: bottom_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "BOTTOM_HOLD_TAP";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo 1>, <&bottom_td>;
+        };
+        
+        bottom_td: tap_dance_bottom {
+            compatible = "zmk,behavior-tap-dance";
+            label = "BOTTOM_TAP_DANCE";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&none>, <&to 1>;
+        };
+    };
+};
+
+
+/ {
     keymap {
         compatible = "zmk,keymap";
 
@@ -26,7 +48,7 @@
 &kp TAB    &kp Q   &kp W   &kp E   &kp R             &kp T                                     &kp Y    &kp U         &kp I      &kp O    &kp P     &kp BACKSLASH
 &kp ENTER  &kp A   &kp S   &kp D   &kp F             &kp G                                     &kp H    &kp J         &kp K      &kp L    &kp SEMI  &kp SQT
 &kp LSHFT  &kp Z   &kp X   &kp C   &kp V             &kp B         &kp MINUS    &kp EQUAL      &kp N    &kp M         &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-                           &mo 1   &kp LEFT_CONTROL  &kp LEFT_ALT  &kp SPACE    &kp BACKSPACE  &kp DEL  &kp LEFT_GUI  &mo 1
+                           &bht    &kp LEFT_CONTROL  &kp LEFT_ALT  &kp SPACE    &kp BACKSPACE  &kp DEL  &kp LEFT_GUI  &bht
             >;
         };
 
