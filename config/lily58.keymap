@@ -14,7 +14,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "BOTTOM_TAP_DANCE";
             #binding-cells = <0>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <200>;
             bindings = <&mo 1>, <&to 1>;
         };
 		
@@ -23,7 +23,7 @@
             label = "ESC_GRAVE";
             #binding-cells = <0>;
             flavor = "tap-preferred";
-            tapping-term-ms = <150>;
+            tapping-term-ms = <200>;
             bindings = <&kp GRAVE>, <&kp ESC>;
         };
     };
