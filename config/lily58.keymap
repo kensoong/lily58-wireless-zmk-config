@@ -13,7 +13,7 @@
         btd0: tap_dance_bottom {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
             bindings = <&mo 1>, <&to 1>;
         };
 		
@@ -21,11 +21,17 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <175>;
+            tapping-term-ms = <150>;
             bindings = <&kp>, <&kp>;
         };
-    };
+		
+		bt_clear_morph: bt_clear_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BT_CLEAR_MORPH";
+            #binding-cells = <0>;
+            bindings = <&kp F10>, <&bt BT_CLR>;  // Normal: F10 key, With mods: BT_CLR
+            mods = <(MOD_LCTL)>;
+		};
 };
 
 / {
@@ -60,7 +66,7 @@
 
             display-name = "Lower";
             bindings = <
-&trans  &kp F1          &kp F2          &kp F3           &kp F4        &kp F5                          &kp F6        &kp F7        &kp F8        &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &bt BT_CLR
+&trans  &kp F1          &kp F2          &kp F3           &kp F4        &kp F5                          &kp F6        &kp F7        &kp F8        &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &bt bt_clear_morph
 &trans  &kp ENTER       &kp UP_ARROW    &none            &none         &to 0                           &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp PLUS          &kp MINUS          &kp K_VOLUME_UP
 &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none         &none                           &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp ASTRK         &kp SLASH          &kp K_VOLUME_DOWN
 &trans  &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2     &bt BT_SEL 3  &bt BT_SEL 4  &trans    &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD        &kp ENTER          &trans
