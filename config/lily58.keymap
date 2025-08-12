@@ -12,7 +12,6 @@
     behaviors {
         btd0: tap_dance_bottom {
             compatible = "zmk,behavior-tap-dance";
-            label = "BOTTOM_TAP_DANCE";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&mo 1>, <&to 1>;
@@ -20,7 +19,6 @@
 		
 		esc_grave: esc_grave_hold_tap {
             compatible = "zmk,behavior-hold-tap";
-            label = "ESC_GRAVE";
             #binding-cells = <0>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
