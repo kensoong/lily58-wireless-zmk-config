@@ -29,7 +29,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "BT_CLEAR_MORPH";
             #binding-cells = <0>;
-            bindings = <&kp F10>, <&bt BT_CLR>;  // Normal: F10 key, With mods: BT_CLR
+            bindings = <&kp F10>, <&bt BT_CLR>;
             mods = <(MOD_LCTL)>;
 		};
 };
