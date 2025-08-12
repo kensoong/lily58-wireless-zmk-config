@@ -17,6 +17,7 @@
             tapping-term-ms = <150>;
             bindings = <&mo 1>, <&to 1>;
         };
+		
 		esc_grave: esc_grave_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "ESC_GRAVE";
