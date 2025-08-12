@@ -31,6 +31,7 @@
             bindings = <&kp F10>, <&bt BT_CLR>;
             mods = <(MOD_LCTL)>;
 		};
+	};
 };
 
 / {
